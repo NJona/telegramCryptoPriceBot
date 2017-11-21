@@ -19,6 +19,9 @@ def start(bot, update):
         keyboard.append(zeile)
     update.message.reply_text('Herzlich Willkommen!', reply_markup = telegram.ReplyKeyboardMarkup(keyboard = keyboard))
 
+def info(bot, update):
+    update.message.reply_text("available Commands: \n\n/info (Get available Commands)\n\n/GETBTC (Get actual Bitcoin Price)\n/GETETH (Get actual Ethereum Price)\n/GETXRP (Get actual Ripple Price)\n/GETLTC (Get actual Litecoin Price)")
+
 #
 # Command Optionen
 #
@@ -48,6 +51,7 @@ def getLTC(bot, update):
 
 updater = Updater(TOKEN)
 updater.dispatcher.add_handler(CommandHandler('start', start))
+updater.dispatcher.add_handler(CommandHandler('info', info))
 updater.dispatcher.add_handler(CommandHandler('getBTC', getBTC))
 updater.dispatcher.add_handler(CommandHandler('getETH', getETH))
 updater.dispatcher.add_handler(CommandHandler('getXRP', getXRP))
