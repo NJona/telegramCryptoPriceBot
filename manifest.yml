@@ -1,0 +1,5 @@
+---
+applications:
+- name:    telegramCryptoPriceBot
+  host:    telegramCryptoPriceBot
+  memory:  512M
